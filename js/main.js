@@ -85,13 +85,13 @@ window.onload = function () {
                 }
             }
 
-        if (getAgeMonth < 10) {
+        if (getAgeMonth < 10 && getAgeMonth >= 0) {
             getAgeMonth = "0" + getAgeMonth;
-        };
+        }
         if (getAgeYear < 10) {
             getAgeYear = "0" + getAgeYear;
         };
-        if (parseInt(day) > currentMonthDays || enterYear.value == "year" || enterMonth == "month" || enterDay == "day") {
+        if (parseInt(day) > currentMonthDays || enterYear.value == "year" || enterMonth.value == "month" || enterDay.value == "Day" || getAgeDay() < 0 || getAgeMonth < 0) {
 
             Object.assign(result.style, {
                 color: "red",
@@ -112,6 +112,7 @@ window.onload = function () {
             })
 
             result.innerHTML = `Your age is ${getAgeYear} Years: ${getAgeMonth} Months : ${getAgeDay()} Days on ${week[weekDay]}.`;
+            console.log(getAgeMonth);
         }
     }
 
