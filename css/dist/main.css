@@ -8,13 +8,10 @@
 .main {
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   height: 50vh;
-}
-.main .age {
-  flex: 100%;
 }
 .main .age label {
   font-weight: bold;
@@ -38,9 +35,10 @@
   top: 5px;
 }
 .main .age select {
-  width: 8%;
+  width: 100px;
   height: 30px;
   margin: 0 10px;
+  padding: 0 5px;
 }
 .main .age select option {
   font-family: "Amiri", serif;
@@ -70,4 +68,28 @@
   visibility: hidden;
   box-shadow: 0px 6px 12px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.8s ease;
+}
+
+@media (max-width: 750px) {
+  .main {
+    height: 100vh;
+  }
+  .main .age label {
+    display: block;
+    margin: 20px 0 0;
+  }
+  .main .age label::after {
+    display: none;
+  }
+  .main .age select {
+    margin: 0;
+  }
+  .main .age button {
+    display: block;
+    margin: 30px 0 0;
+  }
+  .main #result {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
